@@ -1,0 +1,22 @@
+USERS
+----------
+id:integer
+name:string [present, unique, 4-32 chars]
+email:string [present, unique, regex]
+
+
+POSTS
+----------
+id:integer
+user_id:integer [present]
+title:string [present, unique, 4-64 chars]
+hyperlink:string [present, unique, regex]
+body:text [present, unique, 16-1024 chars]
+
+
+COMMENTS
+----------
+id:integer
+post_id:integer [present]
+user_id:integer [present]
+body:text [present, 4-256 chars]
